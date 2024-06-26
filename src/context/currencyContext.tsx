@@ -1,40 +1,57 @@
-// src/context/CurrencyContext.tsx
-import React, {createContext, useState, useEffect, ReactNode} from 'react';
+import React, {
+  createContext,
+  useState,
+  useEffect,
+  ReactNode,
+  useCallback,
+} from 'react';
 import axios from 'axios';
+import {filterBaseCurrency} from '../utils';
 
+// Define the shape of the context data
 interface CurrencyContextProps {
-  rates: {[key: string]: number};
+  rates: {code: string; rate: number}[];
   loading: boolean;
   error: Error | null;
+  refreshRates: () => Promise<void>;
 }
 
-const CurrencyContext = createContext<CurrencyContextProps | undefined>(
+// Create the context with a default value
+export const CurrencyContext = createContext<CurrencyContextProps | undefined>(
   undefined,
 );
 
-const CurrencyProvider = ({children}: {children: ReactNode}) => {
-  const [rates, setRates] = useState<{[key: string]: number}>({});
+// Define the provider component
+export const CurrencyProvider = ({children}) => {
+  const [rates, setRates] = useState<{code: string; rate: number}[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
 
-  // useEffect(() => {
-  //   axios
-  //     .get('https://api.exchangerate-api.com/v4/latest/INR')
-  //     .then(response => {
-  //       setRates(response?.conversion_rates);
-  //       setLoading(false);
-  //     })
-  //     .catch(error => {
-  //       setError(error);
-  //       setLoading(false);
-  //     });
-  // }, []);
+  const fetchRates = useCallback(async () => {
+    setLoading(true);
+    try {
+      const response = await axios.get(
+        'https://v6.exchangerate-api.com/v6/7bdfcf698b20b9c13d0104c9/latest/INR',
+      );
+      const filteredRates = filterBaseCurrency(response.data);
+      setRates(filteredRates);
+      setError(null);
+    } catch (error) {
+      console.log({error});
+      setError(error);
+    } finally {
+      setLoading(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    fetchRates();
+  }, [fetchRates]);
 
   return (
-    <CurrencyContext.Provider value={{rates, loading, error}}>
+    <CurrencyContext.Provider
+      value={{rates, loading, error, refreshRates: fetchRates}}>
       {children}
     </CurrencyContext.Provider>
   );
 };
-
-export {CurrencyProvider, CurrencyContext};
