@@ -1,9 +1,61 @@
-<<<<<<< HEAD
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Currency Converter
+
+Currency Converter is a React Native application that allows users to convert currencies using real-time exchange rates. 
+
+## Table of Contents
+
+- [Features](#features)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Features
+
+- Convert currencies using real-time exchange rates.
+- Swap base and target currencies.
+- Search for currencies by name or code.
+- Manual numeric keyboard for entering amounts.
 
 # Getting Started
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+## Prerequisites
+
+Before you begin, ensure you have met the following requirements:
+
+- You have installed Node.js and npm.
+- You have installed Android Studio or Xcode for mobile development.
+- >**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+
+## Installation
+
+1. Clone the repo
+
+   ```bash
+   git clone https://github.com/Rohitbarate/Currency-converter.git
+   
+2. Navigate to the project directory
+
+   ```bash
+   cd currency-converter
+   
+3. Install the dependencies
+
+   ```bash
+   npm install
+   
+4. Set up your environment (iOS/Android)
+- iOS:
+    ```bash
+   cd ios
+   pod install
+   cd ..
+ - Android:
+     Make sure you have the Android SDK installed and set up properly.
+
+## Usage
 
 ## Step 1: Start the Metro Server
 
@@ -58,7 +110,7 @@ Now that you have successfully run the app, let's modify it.
 
 ## Congratulations! :tada:
 
-You've successfully run and modified your React Native App. :partying_face:
+You've successfully run and modified Currency Converter App. :partying_face:
 
 ### Now what?
 
@@ -79,5 +131,6 @@ To learn more about React Native, take a look at the following resources:
 - [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
 - [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
 =======
-# Currency-converter
->>>>>>> 92fe6a4c20aa180e9476f15a9a6b7a9235a45a47
+
+
+
