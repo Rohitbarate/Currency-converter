@@ -1,11 +1,63 @@
-<<<<<<< HEAD
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Currency Converter
+
+Currency Converter is a React Native application that allows users to convert currencies using real-time exchange rates. 
+
+## Table of Contents
+
+- [Features](#features)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Features
+
+- Convert currencies using real-time exchange rates.
+- Swap base and target currencies.
+- Search for currencies by name or code.
+- Manual numeric keyboard for entering amounts.
 
 # Getting Started
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+## Prerequisites
 
-## Step 1: Start the Metro Server
+Before you begin, ensure you have met the following requirements:
+
+- You have installed Node.js and npm.
+- You have installed Android Studio or Xcode for mobile development.
+- >**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+
+## Installation
+
+1. Clone the repo
+
+   ```bash
+   git clone https://github.com/Rohitbarate/Currency-converter.git
+   
+2. Navigate to the project directory
+
+   ```bash
+   cd currency-converter
+   
+3. Install the dependencies
+
+   ```bash
+   npm install
+   
+4. Set up your environment (iOS/Android)
+- iOS:
+    ```bash
+   cd ios
+   pod install
+   cd ..
+ - Android:
+     Make sure you have the Android SDK installed and set up properly.
+
+## Usage
+
+### Step 1: Start the Metro Server
 
 First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
 
@@ -19,7 +71,7 @@ npm start
 yarn start
 ```
 
-## Step 2: Start your Application
+### Step 2: Start your Application
 
 Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
 
@@ -47,37 +99,87 @@ If everything is set up _correctly_, you should see your new app running in your
 
 This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
 
-## Step 3: Modifying your App
 
-Now that you have successfully run the app, let's modify it.
+### Congratulations! :tada:
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+You've successfully run and modified Currency Converter App. :partying_face:
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+### Navigate through the app:
 
-## Congratulations! :tada:
+The main dashboard shows the current exchange rates.
+Use the search bar to find specific currencies.
+Swap and convert currencies on the conversion screen.
 
-You've successfully run and modified your React Native App. :partying_face:
+### Project Structure
 
-### Now what?
+```bash
+.
+├── AppWrapper.tsx             # Wrapper file to wrap application using context provider
+├── App.tsx                    # Entry point of the application
+├── components                 # Reusable components
+│   ├── SearchScreen.tsx       # Search screen for finding currencies
+├── context
+│   ├── currencyContext.tsx    # Context for managing currency data
+├── screens                    # Application screens
+│   ├── DashboardScreen.tsx    # Main dashboard screen
+│   ├── ConversionScreen.tsx   # Currency conversion screen
+├── utils
+│   ├── index.ts    # Helper functions for data manipulation
+└── README.md                  # This file
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
+```
 
-# Troubleshooting
+## Contributing
 
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+1. Fork the repository.
 
-# Learn More
+   Fork the repository by clicking the "Fork" button at the top right corner of the GitHub project page.
+   [Repository Link](https://github.com/Rohitbarate/Currency-converter.git)
+   
+   
+3. Clone the Forked Repository
 
-To learn more about React Native, take a look at the following resources:
+   ```bash
+   git clone https://github.com/yourusername/Currency-converter.git
+   ```
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
-=======
-# Currency-converter
->>>>>>> 92fe6a4c20aa180e9476f15a9a6b7a9235a45a47
+4. Navigate to the project directory
+
+   ```bash
+   cd currency-converter
+   ```
+
+3. Create a New Branch
+   Create a new branch for your feature or bug fix:
+
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+
+4. Commit Your Changes
+
+   Commit your changes with a descriptive commit message:
+
+   ```bash
+    git commit -m 'Add some feature'
+   ```
+   
+
+5. Push to Your Branch
+
+   Push your changes to your forked repository:
+   ```bash
+   git push origin feature/your-feature-name
+   ```
+   
+
+6. Open a Pull Request
+
+   Open a pull request to the main repository. Go to the [original repository](https://github.com/Rohitbarate/Currency-converter.git) and click on "New Pull Request",      then select your branch.
+
+
+## License
+   This project is licensed under the [MIT License]() - see the LICENSE file for details.
+
+## Contact
+If you have any questions, feel free to open an issue or contact me directly at rohitbarate100@gmail.com.
