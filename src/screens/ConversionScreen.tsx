@@ -14,7 +14,7 @@ const ACTION_KEYS = ['DEL', 'AC'];
 const ConversionScreen = () => {
   const {rates} = useContext(CurrencyContext);
 
-  const [amount, setAmount] = useState('200.50');
+  const [amount, setAmount] = useState('1');
   const [result, setResult] = useState<number | null>(null);
   const [baseCurrency, setBaseCurrency] = useState('INR');
   const [targetCurrency, setTargetCurrency] = useState('USD');
