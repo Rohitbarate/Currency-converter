@@ -179,7 +179,7 @@ Swap and convert currencies on the conversion screen.
 
 
 ## License
-   This project is licensed under the [MIT License]() - see the LICENSE file for details.
+   This project is licensed under the [MIT License](https://github.com/Rohitbarate/Currency-converter/blob/main/LICENCE) - see the LICENSE file for details.
 
 ## Contact
 If you have any questions, feel free to open an issue or contact me directly at rohitbarate100@gmail.com.
