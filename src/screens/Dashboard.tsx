@@ -22,7 +22,7 @@ const DashboardScreen = ({navigation}: {navigation: any}) => {
 
   // Function to handle navigation to search screen
   const navigateToSearch = () => {
-    navigation.navigate('searchCurrency'); // Replace 'SearchScreen' with your actual screen name
+    navigation.navigate('searchCurrency', {onSelect: undefined}); // Replace 'SearchScreen' with your actual screen name
   };
 
   // Function to handle navigation to search screen
@@ -30,9 +30,16 @@ const DashboardScreen = ({navigation}: {navigation: any}) => {
     navigation.navigate('Conversion'); // Replace 'SearchScreen' with your actual screen name
   };
 
-  const renderItem = ({item}: {item: {code: string; rate: number}}) => (
+  const renderItem = ({
+    item,
+  }: {
+    item: {code: string; name: string; rate: number};
+  }) => (
     <View style={styles.itemContainer}>
-      <Text style={styles.currencyCode}>{item.code}</Text>
+      <View>
+        <Text style={styles.currencyCode}>{item.code}</Text>
+        <Text style={styles.currencyName}>{item.name}</Text>
+      </View>
       <Text style={styles.currencyRate}>{item.rate}</Text>
     </View>
   );
@@ -42,7 +49,7 @@ const DashboardScreen = ({navigation}: {navigation: any}) => {
       <TouchableOpacity
         onPress={navigateToSearch}
         style={styles.searchBarContainer}>
-        <Text style={styles.searchBarText}>🔎 {'  '}Search currencies</Text>
+        <Text style={styles.searchBarText}>🔍 {'  '}Search currencies</Text>
       </TouchableOpacity>
       {loading ? (
         // <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
@@ -62,9 +69,9 @@ const DashboardScreen = ({navigation}: {navigation: any}) => {
           <FlatList
             data={rates.slice(0, 20)}
             keyExtractor={item => item.code}
-            numColumns={2}
+            // numColumns={2}
             renderItem={renderItem}
-            columnWrapperStyle={styles.row}
+            // columnWrapperStyle={styles.row}
             style={{flex: 0.8, height: '80%'}}
           />
           <View style={{flex: 0.2}}>
@@ -90,11 +97,11 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
   },
   header: {
-    fontSize: 16,
-    fontWeight: 'bold',
+    fontSize: 14,
+    fontWeight: '600',
     marginTop: 16,
     marginBottom: 6,
-    color: '#f5f5f590',
+    color: '#f5f5f5',
     textAlign: 'left',
   },
   row: {
@@ -102,43 +109,53 @@ const styles = StyleSheet.create({
   },
   itemContainer: {
     flex: 1,
-    backgroundColor: '#f0f0f0',
+    backgroundColor: '#f0f0f040',
     padding: 16,
     margin: 4,
     borderRadius: 8,
     alignItems: 'center',
+    justifyContent: 'space-between',
+    flexDirection: 'row',
   },
   currencyCode: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#333',
+    color: '#fff',
+  },
+  currencyName: {
+    fontSize: 12,
+    fontWeight: '400',
+    color: '#ffffff90',
   },
   currencyRate: {
-    fontSize: 16,
-    color: '#666',
+    fontSize: 20,
+    color: '#fff',
   },
   searchBarContainer: {
-    padding: 12,
-    backgroundColor: '#f2f2f2',
+    paddingHorizontal: 12,
+    paddingVertical: 12,
+    backgroundColor: '#f0f0f050',
     borderRadius: 24,
-    marginBottom: 16,
-    borderColor: '#000',
+    marginBottom: 12,
+    borderColor: '#ffffff80',
     borderWidth: 1,
   },
   searchBarText: {
     fontSize: 16,
-    color: '#333',
+    color: '#ffffff',
   },
   button: {
-    backgroundColor: '#007bff',
+    backgroundColor: 'orange',
     padding: 12,
     borderRadius: 8,
     alignItems: 'center',
     marginTop: 16,
   },
   buttonText: {
-    color: '#000',
+    color: '#fff',
     fontSize: 16,
+    fontWeight: '800',
+    letterSpacing: 1,
   },
 });
 

@@ -1,18 +1,18 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import DashboardScreen from '../screens/Dashboard';
 import ConversionScreen from '../screens/ConversionScreen';
 import SearchScreen from '../components/SearchScreen';
 
-const Stack = createStackNavigator();
+const Stack = createNativeStackNavigator();
 
 const RootNavigator = () => (
   <NavigationContainer>
     <Stack.Navigator
       initialRouteName="Dashboard"
       screenOptions={{
-        headerShown: false,
+        headerShown: true,
         headerStyle: {backgroundColor: '#000'},
         headerTintColor: '#fff',
       }}>
@@ -26,7 +26,19 @@ const RootNavigator = () => (
           headerShadowVisible: false,
         }}
       />
-      <Stack.Screen name="searchCurrency" component={SearchScreen} />
+      <Stack.Screen
+        name="searchCurrency"
+        component={SearchScreen}
+        options={{
+          headerShown: false,
+          title: 'Search currency',
+          presentation: 'containedModal',
+          animation: 'slide_from_bottom',
+          statusBarColor: '#00000095',
+          statusBarStyle: 'light',
+          statusBarAnimation: 'slide',
+        }}
+      />
     </Stack.Navigator>
   </NavigationContainer>
 );
