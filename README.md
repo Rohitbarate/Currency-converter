@@ -4,7 +4,7 @@ Currency Converter is a React Native application that allows users to convert cu
 
 ## Video Demo
 
-![Demo](https://drive.google.com/file/d/1FVjwEiyKNb-eay3CtJnhBsr-BSmOpLyv/preview)
+![Demo](https://drive.google.com/file/d/1FVjwEiyKNb-eay3CtJnhBsr-BSmOpLyv/view?usp=sharing)
 
 ## Table of Contents
 
